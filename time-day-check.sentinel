@@ -1,0 +1,7 @@
+import "time"
+
+is_weekday = rule { time.now.weekday_name not in ["Saturday", "Sunday"] }
+is_open_hours = rule { time.now.hour > 8 and time.now.hour < 17 }
+print("current time is", time.now.weekday_name, time.now.hour, time.now.minute)
+
+main = rule { is_open_hours and is_weekday }
