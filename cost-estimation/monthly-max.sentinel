@@ -3,7 +3,7 @@ import "tfrun"
 import "decimal"
 
 main = rule {
-  #decimal.new(tfrun.cost_estimate.proposed_monthly_cost).less_than(20)
-  decimal.new(25).less_than(20)
+  decimal.new(tfrun.cost_estimate.proposed_monthly_cost).less_than(20.00)
+  #decimal.new(25).less_than(20)
 
 }
