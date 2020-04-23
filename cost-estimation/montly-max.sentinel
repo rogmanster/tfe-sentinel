@@ -1,0 +1,7 @@
+##Max Monthly Cost
+import "tfrun"
+import "decimal"
+
+main = rule {
+  decimal.new(tfrun.cost_estimate.proposed_monthly.cost).less_than(20)
+}
