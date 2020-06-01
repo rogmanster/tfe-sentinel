@@ -11,7 +11,7 @@ get_vms = func() {
 
 allowed_machine_types = [
   "n1-standard-1",
-  "n1-standard-2"
+  "n1-standard-2",
 ]
 
 vms = get_vms()
