@@ -20,7 +20,6 @@ allowed_vm_sizes = [
   "Standard_DS1_V2",
   "Standard_DS2_v2",
   "Standard_DS2_V2",
-  "Standard_A0",
   "Standard_A1",
   "Standard_A2",
   "Standard_D1",
