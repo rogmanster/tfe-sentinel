@@ -1,3 +1,3 @@
-policy "aws-s3" {
+policy "aws-instance-size" {
     enforcement_level = "soft-mandatory"
 }
