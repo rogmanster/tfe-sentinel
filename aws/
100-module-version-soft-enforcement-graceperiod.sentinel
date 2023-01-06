@@ -1,0 +1,33 @@
+import "time"
+import "tfconfig"
+import "decimal"
+
+param version
+param push_date
+param grace_period_mins
+
+current_version = tfconfig.modules["ec2-instance"].version
+deadline        = time.load(push_date).add(time.minute * decimal.new(grace_period_mins).int)
+
+in_compliance = func(){
+  if (current_version != version) {
+    print("----------------------------------------------------------------")
+    print("|")
+    print("| WARNING: Your aws-ec2-instance module is out of compliance.")
+    print("| Required version:", version)
+    print("| Version in use:", current_version)
+    print("| Please upgrade by:", deadline.rfc3339)
+    print("|")
+    print("----------------------------------------------------------------")
+    return false
+  } else {
+    print("aws-ec2-instance module")
+    print("-----------------------")
+    print("Using compliant version:", current_version)
+    return true
+  }
+}
+
+main = rule {
+  in_compliance()
+}
